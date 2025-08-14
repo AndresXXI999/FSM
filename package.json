@@ -1,0 +1,21 @@
+{
+  "name": "fsm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "paper": "^0.12.18",
+    "paperjs": "^0.0.39"
+  },
+  "devDependencies": {
+    "vite": "^7.1.2"
+  },
+  "description": ""
+}
