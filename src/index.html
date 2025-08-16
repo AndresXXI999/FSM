@@ -11,10 +11,26 @@
       <h1>Máquina de Estados Finitos</h1>
       <canvas id="paperCanvas"></canvas>
       <div class="text-container">
-          <p>Doble clic para crear un estado.</p>
-          <p>Doble clic en un circulo para crear un estado final</p>
-          <p>Doble clic en el texto en el medio para editar su contenido.</p>
-          <p>Dar clic en un estado y mantenerlo presionado para arrastrarlo.</p>
+          <h3>Instrucciones:</h3>
+          <p><strong>Estados:</strong></p>
+          <ul>
+              <li>Doble clic para crear un estado</li>
+              <li>Doble clic en un círculo para hacer estado final</li>
+              <li>Doble clic en el texto para editar nombre</li>
+              <li>Clic y arrastrar para mover estados</li>
+          </ul>
+          <p><strong>Transiciones:</strong></p>
+          <ul>
+              <li><strong>Mantener Shift + Clic</strong> en estado inicial</li>
+              <li>Arrastrar hasta estado final y soltar</li>
+              <li>Para auto-transición: Shift+Clic en el mismo estado</li>
+              <li>Doble clic en transición para editar etiqueta</li>
+          </ul>
+          <p><strong>Otros:</strong></p>
+          <ul>
+              <li>Delete/Backspace para borrar seleccionado</li>
+              <li>Escape para cancelar creación de transición</li>
+          </ul>
       </div>
     </div>
     <script type="module" src="main.js"></script>

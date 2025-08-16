@@ -1,13 +1,14 @@
 import paper from 'paper';
 
 export class State {
-    static STATE_RADIUS = 22;
-    static INNER_RADIUS = 18;
+    static STATE_RADIUS = 25;
+    static INNER_RADIUS = 20;
 
     constructor(point, name = 'q0') {
         this.position = point;
         this.name = name;
         this.isFinal = false;
+        this.isInitial = false;
         this.createVisuals();
         this.setupEventHandlers();
     }
@@ -40,6 +41,38 @@ export class State {
         });
         
         this.group.addChildren([this.outerCircle, this.innerCircle, this.label]);
+    }
+
+    updateInitialMarker() {
+        if (this.initialMarker) this.initialMarker.remove();
+        
+        if (this.isInitial) {
+            const start = this.position.add([-40, 0]);
+            const end = this.position.add([-State.STATE_RADIUS, 0]);
+            
+            this.initialMarker = new paper.Group();
+            const line = new paper.Path.Line({
+                from: start,
+                to: end,
+                strokeColor: 'black',
+                strokeWidth: 1.5
+            });
+            
+            const arrow = new paper.Path();
+            arrow.add(end);
+            arrow.add(end.add([-8, 5]));
+            arrow.add(end.add([-8, -5]));
+            arrow.closed = true;
+            arrow.fillColor = 'black';
+            
+            this.initialMarker.addChildren([line, arrow]);
+            this.group.addChild(this.initialMarker);
+        }
+    }
+
+    toggleInitialState() {
+        this.isInitial = !this.isInitial;
+        this.updateInitialMarker();
     }
 
     setupEventHandlers() {
@@ -88,6 +121,7 @@ export class State {
         
         this.position = new paper.Point(clampedX, clampedY);
         this.group.position = this.position;
+        this.updateInitialMarker();
     }
 
     contains(point) {

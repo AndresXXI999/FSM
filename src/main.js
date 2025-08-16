@@ -19,12 +19,18 @@ paper.view.onMouseDrag = (event) => {
     paper.view.draw();
 };
 
-paper.view.onMouseUp = () => {
-    stateManager.handleMouseUp();
+paper.view.onMouseUp = (event) => {
+    stateManager.handleMouseUp(event.point);
+    paper.view.draw();
 };
 
 window.addEventListener('keydown', (event) => {
     stateManager.handleKeyDown(event.key);
+    paper.view.draw();
+});
+
+window.addEventListener('keyup', (event) => {
+    stateManager.handleKeyUp(event.key);
     paper.view.draw();
 });
 
