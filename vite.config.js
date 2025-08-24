@@ -13,5 +13,5 @@ export default defineConfig({
     emptyOutDir: true,
   },
 
-  base: 'https://github.com/AndresXXI999/FSM',
+  base: '/FSM/',
 });
