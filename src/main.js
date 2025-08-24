@@ -1,4 +1,4 @@
-import paper from 'https://cdn.jsdelivr.net/npm/paper@0.12.17/dist/paper-core.min.js';
+import paper from 'paper';
 import { StateManager } from './managers/StateManager.js'
 
 paper.setup('paperCanvas');
