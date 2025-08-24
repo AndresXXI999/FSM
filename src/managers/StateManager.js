@@ -1,7 +1,7 @@
 import paper from 'paper';
-import { State } from '/components/State.js';
-import { TransitionManager } from '/managers/TransitionManager.js';
-import { StartArrow } from '/components/StartArrow.js';
+import { State } from '../components/State.js';
+import { TransitionManager } from './TransitionManager.js';
+import { StartArrow } from '../components/StartArrow.js';
 
 export class StateManager {
     constructor() {

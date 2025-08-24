@@ -1,5 +1,5 @@
 import paper from 'paper';
-import { StateManager } from '/managers/StateManager.js'
+import { StateManager } from './managers/StateManager.js'
 
 paper.setup('paperCanvas');
 

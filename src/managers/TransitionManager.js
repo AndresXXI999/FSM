@@ -1,5 +1,5 @@
 import paper from 'paper';
-import { Transition } from '/components/Transition.js';
+import { Transition } from '../components/Transition.js';
 
 export class TransitionManager {
     constructor() {
